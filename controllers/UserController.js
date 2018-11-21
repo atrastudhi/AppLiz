@@ -41,7 +41,8 @@ class UserController {
                     if(check === true) {
                         req.session.user = {
                             id: data.id,
-                            email: data.email
+                            email: data.email,
+                            role: data.role
                         }
                         res.redirect(`/home?info='login success`)
                     } else {
