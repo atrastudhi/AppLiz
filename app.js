@@ -13,7 +13,7 @@ app.use(session({
 }))
 
 app.get('/home', (req, res) => {
-    res.send('welcome')
+    res.render('pages/home')
 })
 
 app.use('/user', UserRouter)
