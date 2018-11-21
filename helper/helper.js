@@ -8,7 +8,7 @@ class Helper {
         return hash
     }
 
-    static check (password, input) {
+    static check (input, password) {
         return bcrypt.compareSync(input, password)
     }
 
