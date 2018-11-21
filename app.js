@@ -16,6 +16,8 @@ app.get('/home', (req, res) => {
     res.render('pages/home')
 })
 
+app.use('/item',ItemRouter)
+
 app.use('/user', UserRouter)
 
 app.get('/*', (req, res) => {
