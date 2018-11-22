@@ -3,12 +3,12 @@ const Helper = require('../helper/helper')
 const Sequelize = require("sequelize")
 const Op = Sequelize.Op;
 
-class ItemController{
-    static showAllItem(req,res){
+class ItemController {
+
+    static showAllItem(req, res){
         Model.Item.findAll()
         .then(data=>{
             res.send(data)
-            // res.render("listItem.ejs")
         })
         .catch(err=>{
             res.send(err)
