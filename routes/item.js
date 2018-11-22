@@ -11,7 +11,12 @@ Route.get("/buy/:id",TransactionController.buyItem)
 Route.get("/successbuy",TransactionController.success)
 Route.get("/show-transaction",TransactionController.showTransaction)
 Route.get("/show-all",ItemController.showAllItem)
-Route.get("/edit/:itemId",ItemController.editItem)
+
+Route.get("/add",ItemController.addItemGet)
+Route.post("/add",ItemController.addItemPost)
+
+Route.get("/edit/:itemId",ItemController.editItemGet)
+Route.post('/edit/:itemId',ItemController.editItemPost)
 Route.get("/delete/:itemId",ItemController.deleteItem)
 
 module.exports = Route

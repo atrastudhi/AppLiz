@@ -49,7 +49,7 @@ class TransactionController{
             // console.log(error);
             res.redirect(`/item?info=${error}`)
           } else {
-            console.log('Email sent: ' + info.response);
+            // console.log('Email sent: ' + info.response);
             res.render("pages/sendEmail.ejs",{email})
           }
           });
@@ -67,15 +67,15 @@ class TransactionController{
 
     static list (req, res) {
         Model.User.findAll({
-            include: {
+            include: [{
                 model: Model.Item
-            }
+            }]
         })
             .then(data => {
                 res.render('pages/transactionList', {data})
             })
             .catch(err => {
-                res.send(err)
+                res.redirect(`/admin?info=${err}`)
             })
     }
 }
