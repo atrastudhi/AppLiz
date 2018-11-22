@@ -29,30 +29,29 @@
 
         <div class="container">
                 <h2>Admin Dashboard</h2>
-                <p>kerja lembur bagai kudha.</p>
+                <p>kerja lembur bagai khudha.</p>
                 <table class="table">
                   <thead>
                     <tr>
                       <th>id</th>
+                      <th>buyer</th>
                       <th>item</th>
-                      <th>price</th>
-                      <th>option</th>
                     </tr>
                   </thead>
                   <tbody>
                       <% for(let i = 0; i < data.length; i++) { %>
                     <tr>
                         <td><%= data[i].id %></td>
-                        <td><%= data[i].item %></td>
-                        <td><%= data[i].price %></td>
-                        <td><a href="/item/edit/<%= data[i].id %>">EDIT</a> | <a href="/item/delete/<%= data[i].id %>">DELETE</a></td>
+                        <td><%= data[i].email %></td>
+                        <td>
+                        <% for(let j = 0; j < data[i].Items.length; j++) { %> 
+                        <%= j+1 + '. ' + data[i].Items[j].item %><br>
+                        <% } %>    
+                        </td>    
                     </tr>
                       <% } %>
                   </tbody>
                 </table>
               </div>
-              <center>
-                    <a class="btn btn-primary" href="/item/add" role="button">Add Item</a>   <a class="btn btn-primary" href="/transaction/" role="button">Transaction List</a>
-            </center>
-</body>
+    </body>
 </html>
