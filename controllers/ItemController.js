@@ -5,10 +5,10 @@ const Op = Sequelize.Op;
 
 class ItemController {
 
-    static showAllItem(req, res){
+    static showItemAdmin(req, res){
         Model.Item.findAll()
         .then(data=>{
-            res.send(data)
+            res.render('pages/adminPage', {data})
         })
         .catch(err=>{
             res.send(err)
@@ -16,7 +16,7 @@ class ItemController {
     }
 
     static showSearchBar(req,res){
-        res.render('pages/itemSearchPage.ejs')
+        res.render('pages/itemSearchPage.ejs', {admin: false})
     }
 
     static searchItem(req,res){
