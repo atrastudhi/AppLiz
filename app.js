@@ -3,6 +3,7 @@ const session = require('express-session')
 const app = express()
 const UserRouter = require('./routes/user')
 const ItemRouter = require('./routes/item')
+const helper = require('./helper/helper')
 const port = 3000
 
 app.set('view engine', 'ejs')
@@ -12,8 +13,8 @@ app.use(session({
     secret: 'kuda lumping'
 }))
 
-app.get('/home', (req, res) => {
-    res.render('pages/home')
+app.get('/home', helper.loginCheck,(req, res) => {
+    res.render('pages/home', {status: false})
 })
 
 app.use('/item',ItemRouter)
@@ -25,5 +26,3 @@ app.get('/*', (req, res) => {
 })
 
 app.listen(port, () => console.log('Running...'))
-
-console.log('atras gans')

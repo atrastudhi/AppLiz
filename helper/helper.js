@@ -12,6 +12,17 @@ class Helper {
         return bcrypt.compareSync(input, password)
     }
 
+    static loginCheck (req, res, next) {
+        let data = req.session
+        if(data.user !== null) {
+            res.render('pages/home', {
+                status: true
+            })
+        } else {
+            next()
+        }
+    }
+
 }
 
 module.exports = Helper

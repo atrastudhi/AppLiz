@@ -25,8 +25,9 @@ class UserController {
     static loginForm (req, res) {
         res.render('pages/loginForm')
     }
-
+    
     static login (req, res) {
+        console.log('======================================')
         let body = req.body
         Model.User.findOne({
             where: {
@@ -59,6 +60,8 @@ class UserController {
             req.session.user = null
             res.redirect(`/home?info='logout success`)
     }
+
+    
 
 }
 
