@@ -8,10 +8,14 @@ class ItemController {
     static showItemAdmin(req, res){
         Model.Item.findAll()
         .then(data=>{
+<<<<<<< HEAD
+            res.render('pages/listItem.ejs',{data:data, info:req.query.info})
+=======
             res.render('pages/adminPage', {data})
+>>>>>>> 787e8494c2c7904116bdc34563eea6fb772d440c
         })
         .catch(err=>{
-            res.send(err)
+            res.redirect(`/item?info=${err}`)
         })
     }
 
@@ -43,6 +47,14 @@ class ItemController {
         .catch(err=>{
             res.redirect(`?info=${err}`)
         })
+    }
+
+    static editItem(req,res){
+
+    }
+
+    static deleteItem(req,res){
+        
     }
 }
 
