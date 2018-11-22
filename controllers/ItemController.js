@@ -44,6 +44,14 @@ class ItemController {
             res.redirect(`?info=${err}`)
         })
     }
+
+    static editItem(req,res){
+
+    }
+
+    static deleteItem(req,res){
+        
+    }
 }
 
 module.exports = ItemController
