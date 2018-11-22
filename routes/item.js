@@ -8,6 +8,7 @@ Route.post("/",ItemController.searchItem)
 
 Route.get("/buy/:id",TransactionController.buyItem)
 Route.get("/successbuy",TransactionController.success)
+Route.get("/show-transaction",TransactionController.showTransaction)
 Route.get("/show-all",ItemController.showAllItem)
 
 module.exports = Route

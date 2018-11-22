@@ -31,13 +31,13 @@ class TransactionController{
         var transporter = nodemailer.createTransport({
           service: 'gmail',
           auth: {
-            user: 'youremail@gmail.com',
-            pass: 'yourpassword'
+            user: 'gamecowo12345@gmail.com',
+            pass: 'gamecowo54321'
           }
         });
   
         var mailOptions = {
-          from: 'youremail@gmail.com',
+          from: 'gamecowo12345@gmail.com',
           to: `${email}`,
           subject: 'License code',
           text: 'thanks!'
@@ -46,15 +46,24 @@ class TransactionController{
         transporter.sendMail(mailOptions, function(error, info){
           if (error) {
             // console.log(error);
-            res.redirect('/item?info=wrongemail')
+            res.redirect(`/item?info=${error}`)
           } else {
-            // console.log('Email sent: ' + info.response);
+            console.log('Email sent: ' + info.response);
             res.render("pages/sendEmail.ejs",{email})
           }
           });
+    }
 
-        
+    static showTransaction(req,res){
+        Model.Transaction.findAll()
+        .then(data=>{
+            res.send(data)
+        })
+        .catch(err=>{
+            res.send(err)
+        })
     }
 }
+
 
 module.exports = TransactionController
