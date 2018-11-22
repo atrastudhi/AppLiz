@@ -9,9 +9,9 @@
     <title>Search Item</title>
 </head>
 <body>
-        <div class="container">
-          <h2>Search Item</h2>
-          <form method="POST" action="/item">
+    <div class="container">
+        <h2>Search Item</h2>
+        <form method="POST" action="/item">
             <div class="form-group">
               <label for="name">By Name:</label>
               <input type="text" placeholder="Search.." name="item">
@@ -26,9 +26,10 @@
                     <option value = 1000> < 1000 </option>
                 </select>
             </div>
-            <button type="submit" class="btn btn-default">Submit</button>
-          </form>
-        </div>
+            <button type="submit" class="btn btn-default">Submit</button><br>
+        </form>
+        <br><a href = "/item/show-all"><button type="submit" class="btn btn-default">Show All Item</button></a>
+    </div>
 
     
 </body>

@@ -8,10 +8,10 @@ class ItemController {
     static showAllItem(req, res){
         Model.Item.findAll()
         .then(data=>{
-            res.send(data)
+            res.render('pages/listItem.ejs',{data:data, info:req.query.info})
         })
         .catch(err=>{
-            res.send(err)
+            res.redirect(`/item?info=${err}`)
         })
     }
 
