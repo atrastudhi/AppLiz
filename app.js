@@ -13,7 +13,7 @@ app.use(session({
     secret: 'kuda lumping'
 }))
 
-app.get('/home', helper.loginCheck,(req, res) => {
+app.get('/home', helper.loginCheck, (req, res) => {
     res.render('pages/home', {status: false})
 })
 

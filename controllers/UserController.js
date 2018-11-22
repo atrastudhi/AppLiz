@@ -27,7 +27,6 @@ class UserController {
     }
     
     static login (req, res) {
-        console.log('======================================')
         let body = req.body
         Model.User.findOne({
             where: {
