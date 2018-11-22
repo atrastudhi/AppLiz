@@ -23,6 +23,16 @@ class Helper {
         }
     }
 
+    static adminPage (req, res, next) {
+        let data = req.session
+        console.log(data)
+        if(data.user.role === 'admin') {
+            res.render('pages/itemSearchPage.ejs', {admin: true})
+        } else {
+            next()
+        }
+    }
+
 }
 
 module.exports = Helper

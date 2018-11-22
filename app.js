@@ -3,6 +3,7 @@ const session = require('express-session')
 const app = express()
 const UserRouter = require('./routes/user')
 const ItemRouter = require('./routes/item')
+const AdminRouter = require('./routes/admin')
 const helper = require('./helper/helper')
 const port = 3000
 
@@ -17,9 +18,11 @@ app.get('/home', helper.loginCheck, (req, res) => {
     res.render('pages/home', {status: false})
 })
 
-app.use('/item',ItemRouter)
+app.use('/item', ItemRouter)
 
 app.use('/user', UserRouter)
+
+app.use('/admin', AdminRouter)
 
 app.get('/*', (req, res) => {
     res.redirect('/home')
