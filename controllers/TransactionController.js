@@ -4,11 +4,12 @@ var nodemailer = require('nodemailer');
 class TransactionController{
     static buyItem(req,res){
         let itemId = req.params.id
-        let customerId = req.session.user.id
+        let UserId = req.session.user.id
         let obj = {
             ItemId: itemId,
-            CustomerId: customerId,
+            UserId: UserId
         }
+        console.log(obj)
 
         Model.Transaction.create(obj)
             .then(data=>{
@@ -62,6 +63,20 @@ class TransactionController{
         .catch(err=>{
             res.send(err)
         })
+    }
+
+    static list (req, res) {
+        Model.User.findAll({
+            include: {
+                model: Model.Item
+            }
+        })
+            .then(data => {
+                res.render('pages/transactionList', {data})
+            })
+            .catch(err => {
+                res.send(err)
+            })
     }
 }
 

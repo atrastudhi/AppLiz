@@ -5,10 +5,14 @@ const Op = Sequelize.Op;
 
 class ItemController {
 
-    static showAllItem(req, res){
+    static showItemAdmin(req, res){
         Model.Item.findAll()
         .then(data=>{
+<<<<<<< HEAD
             res.render('pages/listItem.ejs',{data:data, info:req.query.info})
+=======
+            res.render('pages/adminPage', {data})
+>>>>>>> 787e8494c2c7904116bdc34563eea6fb772d440c
         })
         .catch(err=>{
             res.redirect(`/item?info=${err}`)
@@ -16,7 +20,7 @@ class ItemController {
     }
 
     static showSearchBar(req,res){
-        res.render('pages/itemSearchPage.ejs')
+        res.render('pages/itemSearchPage.ejs', {admin: false})
     }
 
     static searchItem(req,res){
