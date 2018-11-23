@@ -1,4 +1,5 @@
 const Model = require("../models")
+
 const nodemailer = require('nodemailer')
 
 class TransactionController{
