@@ -1,5 +1,5 @@
 const Model = require("../models")
-var nodemailer = require('nodemailer');
+const nodemailer = require('nodemailer');
 
 class TransactionController{
     static buyItem(req,res){
