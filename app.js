@@ -16,7 +16,7 @@ app.use(session({
 }))
 
 app.get('/home', helper.loginCheck, (req, res) => {
-    res.render('pages/home', {status: false})
+    res.render('pages/home', {status: false, info: req.query.info})
 })
 
 app.use('/item', ItemRouter)

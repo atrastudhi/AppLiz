@@ -4,7 +4,7 @@ const Helper = require('../helper/helper')
 class UserController {
 
     static registerForm (req, res) {
-        res.render('pages/registerForm')
+        res.render('pages/registerForm', {info: req.query.info})
     } 
 
     static addUser (req, res) {
@@ -23,7 +23,7 @@ class UserController {
     }
 
     static loginForm (req, res) {
-        res.render('pages/loginForm')
+        res.render('pages/loginForm', {info: req.query.info})
     }
     
     static login (req, res) {

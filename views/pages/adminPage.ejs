@@ -9,39 +9,40 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-
-        <nav class="navbar navbar-inverse">
-                <div class="container-fluid">
-                  <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                      <span class="icon-bar"></span>
-                      <span class="icon-bar"></span>
-                      <span class="icon-bar"></span>                        
-                    </button>
-                    <a class="navbar-brand" href="/home">AppLiz</a>
-                </div>
-                <div class="collapse navbar-collapse" id="myNavbar">
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>                        
+                </button>
+                <a class="navbar-brand" href="/home">AppLiz</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
                             <ul class="nav navbar-nav navbar-right">
                                 <li><a href="/user/logout"><span class="glyphicon glyphicon-user" ></span> Logout</a></li>
                             </ul>  
-                      </div>
-              </nav>
-
-        <div class="container">
-                <h2>Admin Dashboard</h2>
-                <p>kerja lembur bagai kudha.</p>
-                <table class="table">
-                  <thead>
-                    <tr>
-                      <th>id</th>
-                      <th>item</th>
-                      <th>price</th>
+                        </div>
+                    </nav>
+                    
+        <%- include('../partials/waring', {status: info}) %>
+                    
+                    <div class="container">
+                        <h2>Admin Dashboard</h2>
+                        <p>kerja lembur bagai kudha.</p>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>id</th>
+                                    <th>item</th>
+                                    <th>price</th>
                       <th>option</th>
                     </tr>
-                  </thead>
-                  <tbody>
+                </thead>
+                <tbody>
                       <% for(let i = 0; i < data.length; i++) { %>
-                    <tr>
+                        <tr>
                         <td><%= data[i].id %></td>
                         <td><%= data[i].item %></td>
                         <td><%= data[i].price %></td>

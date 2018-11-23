@@ -8,7 +8,7 @@ class ItemController {
     static showItemAdmin(req, res){
         Model.Item.findAll()
         .then(data=>{
-            res.render('pages/adminPage', {data})
+            res.render('pages/adminPage', {data: data, info: req.query.info})
         })
         .catch(err=>{
             res.redirect(`/item?info=${err}`)
@@ -16,7 +16,7 @@ class ItemController {
     }
 
     static showSearchBar(req,res){
-        res.render('pages/itemSearchPage.ejs', {admin: false})
+        res.render('pages/itemSearchPage.ejs', {admin: false, info: req.query.info})
     }
 
     static searchItem(req,res){
