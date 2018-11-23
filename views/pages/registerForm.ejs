@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Document</title>
+</head>
+<body>
+        <%- include('../partials/navbar', {status: false}) %>
+        <%- include('../partials/waring', {status: info}) %>
+    <style>
+        body {
+            background-color: #2d2d30;
+        }
+        .bg-1 {
+            background: #2d2d30;
+            color: #bdbdbd;
+        }
+        .bg-1 h3 {color: #fff;}
+        .bg-1 p {font-style: italic;}
+    </style>
+            
+    <div class="bg-1">
+        <div class="container">
+            <h3 class="text-center">Sign Up</h3>
+            <p class="text-center">Register for discover more from AppLiz.
+                    
+            <form action="/user/register" method='POST'>
+                <div class="form-group">
+                    <label for="email">Email address:</label>
+                    <input type="email" class="form-control" name='email'>
+                </div>
+                <div class="form-group">
+                    <label for="pwd">Password:</label>
+                    <input type="password" class="form-control" name='password'>
+                </div>
+                <div class="checkbox">
+                    <label><input type="checkbox"> Remember me</label>
+                </div>
+                <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

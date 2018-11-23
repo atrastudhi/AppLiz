@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Data Item</title>
+</head>
+<body>
+        <%- include('../partials/navbarItem', {admin: false}) %>
+    <div class="container container-fluid">
+        <center>
+            <h1>List Item</h1>
+            <h3><a href = "/item"> search Item</a></h3>
+        </center>
+
+        <%- info %>
+        
+        <table class="table table-hover table-striped">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% data.forEach(element=>{ %>
+                    <tr>
+                        <th><%= element.id %></th>
+                        <th><%= element.item %></th>
+                        <td><%= element.price %></td>
+                        <td><a href="/item/buy/<%=element.id%>" onclick="return confirm('Buy this Item?')">Buy</a></td>
+                    </tr>
+                <%})%>
+            </tbody>
+        </table>
+    </div>
+    
+</body>
+</html>

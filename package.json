@@ -1,0 +1,29 @@
+{
+  "name": "appliz",
+  "version": "1.0.0",
+  "description": "pairProject",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/atrastudhi/AppLiz.git"
+  },
+  "author": "Atras - Anhar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/atrastudhi/AppLiz/issues"
+  },
+  "homepage": "https://github.com/atrastudhi/AppLiz#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "express-session": "^1.15.6",
+    "nodemailer": "^4.7.0",
+    "pg": "^7.6.1",
+    "pg-search-sequelize": "0.0.10",
+    "sequelize": "^4.41.2"
+  }
+}
