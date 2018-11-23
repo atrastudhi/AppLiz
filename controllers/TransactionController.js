@@ -1,5 +1,6 @@
 const Model = require("../models")
-const nodemailer = require('nodemailer');
+
+const nodemailer = require('nodemailer')
 
 class TransactionController{
     static buyItem(req,res){
@@ -79,6 +80,5 @@ class TransactionController{
             })
     }
 }
-
 
 module.exports = TransactionController
