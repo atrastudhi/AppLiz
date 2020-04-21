@@ -6,7 +6,7 @@ const ItemRouter = require('./routes/item')
 const AdminRouter = require('./routes/admin')
 const TransactionRouter = require('./routes/transaction')
 const helper = require('./helper/helper')
-const port = 3000
+const port = process.env.PORT || 4000;
 
 app.set('view engine', 'ejs')
 app.use(express.urlencoded({extended: false}))
